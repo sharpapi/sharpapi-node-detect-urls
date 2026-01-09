@@ -5,6 +5,15 @@ const { SharpApiCoreService, SharpApiJobTypeEnum } = require('@sharpapi/sharpapi
  */
 class SharpApiDetectUrlsService extends SharpApiCoreService {
   /**
+   * Creates a new SharpApiDetectUrlsService instance
+   * @param {string} apiKey - Your SharpAPI API key
+   * @param {string} [apiBaseUrl='https://sharpapi.com/api/v1'] - API base URL
+   */
+  constructor(apiKey, apiBaseUrl = 'https://sharpapi.com/api/v1') {
+    super(apiKey, apiBaseUrl, '@sharpapi/sharpapi-node-detect-urls/1.0.1');
+  }
+
+  /**
    * Parses the provided text for any possible URLs. Might come in handy in case of processing and validating
    * big chunks of data against URLs or if you want to detect URLs in places where they're not supposed to be.
    *
